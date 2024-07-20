@@ -1,3 +1,3 @@
 export const Header = () => {
-  return <div>Devscale Indonesia.</div>;
+  return <div>Ini Header</div>;
 };
