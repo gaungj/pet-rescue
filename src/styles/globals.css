@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+img {
+  transition: 0.3s ease all;
+}
+
+img:hover {
+  scale: 102%;
+}
+
 @layer base {
   body {
     @apply min-h-dvh p-4 tracking-tight;
