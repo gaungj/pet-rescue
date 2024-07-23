@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-export const Card = ({ pet }) => {
+export const Card = ({ id, name, description, location }) => {
   return (
     <Link
-      href={`/${pet.id}`}
+      href={`/${id}`}
       className="rounded-lg shadow-lg overflow-hidden cursor-pointer"
     >
       <Image
@@ -15,8 +17,9 @@ export const Card = ({ pet }) => {
         className="w-full object-cover"
       ></Image>
       <div className="px-6 py-4">
-        <h1 className="mb-2 text-xl font-bold">{pet.name}</h1>
-        <p className="text-sm text-gray-600">{pet.description}</p>
+        <h1 className="mb-2 text-xl font-bold">{name}</h1>
+        <p className="text-sm text-gray-600">{description}</p>
+        <p className="text-sm text-gray-600">{location}</p>
       </div>
     </Link>
   );

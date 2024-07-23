@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 
 export default async function Home() {
-  // const prisma = new PrismaClient();
+  const prisma = new PrismaClient();
   const pets = await prisma.pets.findMany();
   // console.log(pets);
 
@@ -16,9 +16,13 @@ export default async function Home() {
       <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mt-4 md:max-w-2xl md:grid-cols-3">
         {pets.map((pet) => {
           return (
-            <div key={pet.id} pet={pet}>
-              <Card></Card>
-            </div>
+            <Card
+              key={pet.id}
+              id={pet.id}
+              name={pet.name}
+              description={pet.description}
+              location={pet.location}
+            ></Card>
           );
         })}
       </div>
